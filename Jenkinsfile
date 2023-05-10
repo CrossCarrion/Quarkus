@@ -14,6 +14,7 @@ pipeline {
             steps {
                 echo "Packaging.."
                 sh '''
+                chmod +x gradlew
                 ./gradlew quarkusBuild
                 '''
             }
