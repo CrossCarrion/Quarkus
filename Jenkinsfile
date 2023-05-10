@@ -15,7 +15,7 @@ pipeline {
                 echo "Building.."
                 sh '''
                 cd src/main/docker
-                docker build -t quarkus/hello-world-jvm
+                docker build . -t quarkus/hello-world-jvm
                 '''
             }
         }
