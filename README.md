@@ -1,5 +1,7 @@
 # hello-world project
 
+Borrowed from https://jhooq.com/run-quarkus-inside-docker-container/.
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
