@@ -14,8 +14,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                cd src/main/docker
-                docker build . -t quarkus/hello-world-jvm
+                docker --version
                 '''
             }
         }
