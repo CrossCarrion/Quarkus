@@ -1,24 +1,20 @@
 pipeline {
+    
+    environment {
+        dockerimagename = "crosscarrion/quarkus-app"
+        dockerImage = ""
+    }
     agent { 
         node {
             label 'docker-agent-alpine'
             }
       }
     stages {
-        stage('Packaging') {
-            steps {
-                echo "Packaging.."
-                sh '''
-                mvn package
-                '''
-            }
-        }
         stage('Build') {
             steps {
                 echo "Building.."
-                sh '''
-                echo "doing build stuff.."
-                '''
+                sh '''cd src/main/docker'''
+                dockerImage = docker.build dockerimagename
             }
         }
         stage('Test') {
