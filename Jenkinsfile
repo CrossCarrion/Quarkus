@@ -13,10 +13,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
-                sh '''cd src/main/docker'''
-                script {
-                    dockerImage = docker.build dockerimagename
-                }
+                sh '''
+                docker build -f src/main/docker/Dockerfile.jvm -t quarkus/hello-world-jvm
+                '''
             }
         }
         stage('Test') {
