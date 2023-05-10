@@ -5,6 +5,14 @@ pipeline {
             }
       }
     stages {
+        stage('Packaging') {
+            steps {
+                echo "Packaging.."
+                sh '''
+                mvn package
+                '''
+            }
+        }
         stage('Build') {
             steps {
                 echo "Building.."
