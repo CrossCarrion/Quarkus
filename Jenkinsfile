@@ -10,6 +10,14 @@ pipeline {
             }
       }
     stages {
+        stage('Package') {
+            steps {
+                echo "Packaging.."
+                sh '''
+                ./gradlew quarkusBuild
+                '''
+            }
+        }
         stage('Build') {
             steps {
                 echo "Building.."
