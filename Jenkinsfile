@@ -14,7 +14,9 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''cd src/main/docker'''
-                dockerImage = docker.build dockerimagename
+                script {
+                    dockerImage = docker.build dockerimagename
+                }
             }
         }
         stage('Test') {
