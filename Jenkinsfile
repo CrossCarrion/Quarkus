@@ -14,7 +14,6 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                man docker build
                 docker build -f src/main/docker/Dockerfile.jvm
                 '''
             }
